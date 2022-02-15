@@ -4,7 +4,7 @@ let x = "#"
 
 for(let i = 0; i < 7; i++){
     console.log(x)
-    x = x + "#"
+    x += "#"
 }
 
 //Exercise 2: FizzBuzz
@@ -66,8 +66,9 @@ function range(start,end, inc){
     }
     console.log(inc)
     let j = start
-    for (let i = 0; i <= end-start ; i += inc){
-        array[i] = j++
+    for (let i = 0; i <= (end-start)/inc ; i++){
+        array[i] = j
+        j += inc
     }
     return array
 }
@@ -78,6 +79,6 @@ function sum(arr){
     }
     return arraySum
 }
-console.log(range(5,2,-1)) //TODO: implement the increment to work
+console.log(range(5,-200, -20))
 console.log(sum(range(1, 10)))
 
