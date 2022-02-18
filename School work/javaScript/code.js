@@ -57,14 +57,12 @@ function countChar (string, char){
 console.log(countBs("BBC"))
 console.log(countChar("kakkerlak","k"))
 
-//Excercise 5: The sum of a range
-let array = []
 
-function range(start,end, inc){
-    if (inc === undefined){
-        inc = 1
-    }
-    console.log(inc)
+//CLASS 2
+
+//Excercise 1: The sum of a range
+function range(start,end, inc = 1){
+    let array = []
     let j = start
     for (let i = 0; i <= (end-start)/inc ; i++){
         array[i] = j
@@ -79,6 +77,35 @@ function sum(arr){
     }
     return arraySum
 }
-console.log(range(5,-200, -20))
+console.log(range(1,10))
 console.log(sum(range(1, 10)))
+
+//excercise 2: Reversing array
+
+function reverseArray (array){
+    // [1,2,3]
+    let j = array.length-1
+    let arrayReverse = []
+    for (let i = 0; i < array.length; i++){
+        arrayReverse[i] = array[j--]
+    }
+    return arrayReverse
+}
+console.log(reverseArray(["A","B","C"]))
+
+
+
+function reverseArrayInPlace(array){
+    let j = array.length-1
+    let arrayReverse = []
+    for (let i = 0; i < array.length; i++){
+        arrayReverse[i] = array[j--]
+    }
+    array = arrayReverse
+    return array
+}
+let arrayValue = [1,2,3,4,5]
+arrayValue = reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
+
 
