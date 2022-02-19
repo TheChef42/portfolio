@@ -84,28 +84,27 @@ console.log(sum(range(1, 10)))
 
 function reverseArray (array){
     // [1,2,3]
-    let j = array.length-1
     let arrayReverse = []
     for (let i = 0; i < array.length; i++){
-        arrayReverse[i] = array[j--]
+        arrayReverse[i] = array[array.length - i - 1]
     }
     return arrayReverse
 }
 console.log(reverseArray(["A","B","C"]))
 
-
-
 function reverseArrayInPlace(array){
-    let j = array.length-1
-    let arrayReverse = []
-    for (let i = 0; i < array.length; i++){
-        arrayReverse[i] = array[j--]
+    for (let i = 0; i < array.length/2; i++){
+        swap(array,i,array.length - i - 1)
     }
-    array = arrayReverse
-    return array
+}
+function swap (array, i, j){
+    //swap elements in position i and j
+    let temp = array[i]
+    array[i]=array[j]
+    array[j] = temp
 }
 let arrayValue = [1,2,3,4,5]
-arrayValue = reverseArrayInPlace(arrayValue);
+reverseArrayInPlace(arrayValue);
 console.log(arrayValue);
-
+#nemt
 
