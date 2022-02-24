@@ -106,5 +106,84 @@ function swap (array, i, j){
 let arrayValue = [1,2,3,4,5]
 reverseArrayInPlace(arrayValue);
 console.log(arrayValue);
-#nemt
 
+//exercise 3:
+
+
+function deepComparison(obj1, obj2){
+    if(obj1 === null || obj2 === null || typeof obj1 !== typeof obj2){
+        return false
+    } if (obj1 === obj2){
+        return true
+    }
+    let keys1 = Object.keys(obj1)
+    let keys2 = Object.keys(obj2)
+    for (let key of keys1){
+        if (keys2.indexOf(key) === -1){
+            return false
+        }
+    }
+    // At this point I know that object one and object they have simalar keys
+    // Now I need to check if the values of each key are equal
+    for (let key of keys1){
+        let val1 = obj1[key]
+        let val2 = obj2[key]
+        if (typeof val1 === "object" || typeof val2 === "object"){
+            return deepComparison(val1,val2)
+        } else {
+            return val1 === val2
+        }
+    }
+}
+let obj1 = {here: {is: "aan"}, object: 2};
+console.log(deepComparison(obj1, obj1));
+console.log(deepComparison(obj1, {here: 1, object: 2}));
+console.log(deepComparison(obj1, {here: {is: "an"}, object: 2}));
+
+
+/*
+function deepEqual(obj1,obj2) {
+    let obj1Keys = Object.keys(obj1)
+    let obj2Keys = Object.keys(obj2)
+
+    if (obj1 === null || obj2 === null){
+        return "one of the objects are null"
+    }
+    else if(obj1 === obj2){
+        return true
+    }
+    else if(typeof obj1 === typeof obj2){
+        for (let i = 0; i < obj1Keys.lengt)
+        if(obj1Keys.toString() !== obj2Keys.toString()){
+            return false
+        }
+        else if (Object.values(obj1).toString() !== Object.values(obj2).toString()){
+            return false
+        }
+        else if(typeof Object.keys(obj1) === "object" && typeof Object.keys(obj2) === "object"){
+            return deepEqual(Object.keys(obj1),Object.keys(obj2))
+        }
+        else{
+            return false
+        }
+    }
+    else{
+        return false
+    }
+}
+let obj = {here: {is: "aan"}, object: 2};
+console.log(deepEqual(obj, obj));
+console.log(deepEqual(obj, {here: 1, object: 2}));
+console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+
+
+
+//exercise 4 flattening
+
+let arrays = [[1, 2, 3], [4, 5], [6]];
+
+console.log(arrays)
+
+// → [1, 2, 3, 4, 5, 6]
+
+*/
