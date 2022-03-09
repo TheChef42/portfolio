@@ -7,9 +7,6 @@ for(let i = 0; i < 7; i++){
     x += "#"
 }
 
-for (let line = "#"; line.length < 8; line += "#")
-    console.log(line);
-
 //Exercise 2: FizzBuzz
 
 for (let i = 1; i <= 100; i++){
@@ -109,7 +106,7 @@ function swap (array, i, j){
 let arrayValue = [1,2,3,4,5]
 reverseArrayInPlace(arrayValue);
 console.log(arrayValue);
-
+#nemt
 
 //excersise 3: Deep comparison
 
