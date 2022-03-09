@@ -7,6 +7,9 @@ for(let i = 0; i < 7; i++){
     x += "#"
 }
 
+for (let line = "#"; line.length < 8; line += "#")
+    console.log(line);
+
 //Exercise 2: FizzBuzz
 
 for (let i = 1; i <= 100; i++){
@@ -106,5 +109,23 @@ function swap (array, i, j){
 let arrayValue = [1,2,3,4,5]
 reverseArrayInPlace(arrayValue);
 console.log(arrayValue);
-#nemt
 
+
+//excersise 3: Deep comparison
+
+
+function deepEqual (obj1, obj2){
+    if (obj1 === null || obj2 === null){
+
+    } else if (typeof obj1 === "object" && typeof obj2 === "object"){
+        if(Object.keys(obj1) === Object.keys(obj2))
+            return true
+    }
+    return 1
+}
+let obj = {here: {is: "an"}, object: 2};
+console.log(deepEqual(obj, obj));
+console.log(deepEqual(obj, {here: 1, object: 2}));
+console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+console.log(Object.keys(obj))
+console.log(Object.keys({here: 1, object: 2}))
