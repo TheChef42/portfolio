@@ -140,7 +140,6 @@ console.log(deepComparison(obj1, obj1));
 console.log(deepComparison(obj1, {here: 1, object: 2}));
 console.log(deepComparison(obj1, {here: {is: "an"}, object: 2}));
 
-
 /*
 function deepEqual(obj1,obj2) {
     let obj1Keys = Object.keys(obj1)
@@ -175,8 +174,7 @@ let obj = {here: {is: "aan"}, object: 2};
 console.log(deepEqual(obj, obj));
 console.log(deepEqual(obj, {here: 1, object: 2}));
 console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
-
-
+*/
 
 //exercise 4 flattening
 
@@ -186,4 +184,3 @@ console.log(arrays)
 
 // → [1, 2, 3, 4, 5, 6]
 
-*/
