@@ -1,8 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int input;
-    int uger, dage, timer, minutter, sekunder, rest;
+    int input, uger, dage, timer, minutter, sekunder, rest;
 
     scanf("%d",&input);
 
