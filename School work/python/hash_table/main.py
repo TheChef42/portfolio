@@ -134,15 +134,21 @@ class LinkedList:
     def __str__(self):
         """Return this doubly linked list formatted as a list."""
         x = self.head
-        print('test')
-        print(type(x))
-        print(type(self))
         string = "["
         while x.next is not None:
-            string += (str(x) + ",")
+            string += (str(x) + ", ")
             x = x.next
         string += (str(x) + "]")
         return string
+
+    def str(self):
+            """Return this doubly linked list formatted as a list."""
+            x = self.head
+            array = []
+            while x is not None:
+                array.append(x.data)
+                x = x.next
+            return array
 
 
 # Testing
@@ -159,25 +165,30 @@ if __name__ == "__main__":
             break
         for inp in inp.split(" "):
             input_key = len(inp) % m
-
             if array[input_key] is None:
                 array.pop(input_key)
                 list_name = LinkedList()
                 list_name.__init__()
-                list_name.prepend(("'" + inp + "'", 1))
+                list_name.prepend((inp, 1))
                 array.insert(input_key, list_name)
             else:
-                if array[input_key].search(inp) is not None:
-                    print(array[input_key])
-                else:
-                    array[input_key].prepend((inp, 1))
-                    y = array[input_key].__str__()
-                    print(y)
-                    print(type(y))
-                    print(len(y))
-                    print(y.index(inp))
-                    print(inp in y)
-                    print(y[5])
+                y = array[input_key].str()
+                counter = 0
+                for item in y:
+                    if item[0] == inp:
+                        word_amount = item[1]
+                        k = array[input_key].search((inp, word_amount))
+                        array[input_key].delete(k)
+                        array[input_key].prepend((inp, word_amount+1))
+                        counter = -1
+                        break
+                    counter += 1
+                    if counter == -1:
+                        break
+                    if counter == len(y):
+                        array[input_key].prepend((inp, 1))
+        for key in array:
+            print(key)
 
 """
     # Insert.
