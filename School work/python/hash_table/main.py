@@ -59,7 +59,7 @@ class LinkedList:
         """
         self.head = None
         if get_key_func is None:
-            self.get_key = lambda x: x   # return self
+            self.get_key = lambda x: x  # return self
         else:
             self.get_key = get_key_func  # return key defined by user
 
@@ -77,21 +77,21 @@ class LinkedList:
 
     def insert(self, data, y):
         """Insert a node with data after node y.  Return the new node."""
-        x = LinkedListNode(data)   # construct a node x
-        x.next = y.next            # x's successor is y's successor
-        x.prev = y                 # x's predecessor is y
+        x = LinkedListNode(data)  # construct a node x
+        x.next = y.next  # x's successor is y's successor
+        x.prev = y  # x's predecessor is y
         if y.next is not None:
-            y.next.prev = x        # x comes before y's successor
-        y.next = x                 # x is now y's successor
+            y.next.prev = x  # x comes before y's successor
+        y.next = x  # x is now y's successor
         return x
 
     def prepend(self, data):
         """Insert a node with data as the head of a doubly linked list.  Return the new node."""
-        x = LinkedListNode(data)   # construct a node x
-        x.next = self.head         # set its next to the head
+        x = LinkedListNode(data)  # construct a node x
+        x.next = self.head  # set its next to the head
         if self.head is not None:  # if a head already exists, change its prev
             self.head.prev = x
-        self.head = x              # x is the new head
+        self.head = x  # x is the new head
         x.prev = None
         return x
 
@@ -101,11 +101,11 @@ class LinkedList:
         Assumption:
         x is a node in the linked list.
         """
-        if x.prev is not None:    # if x is not the head
+        if x.prev is not None:  # if x is not the head
             x.prev.next = x.next  # connect its previous to its next
         else:
-            self.head = x.next    # otherwise, set new head
-        if x.next is not None:    # if x is not the tail
+            self.head = x.next  # otherwise, set new head
+        if x.next is not None:  # if x is not the tail
             x.next.prev = x.prev  # connect its next to its previous
 
     def delete_all(self):
@@ -127,17 +127,19 @@ class LinkedList:
             last = c.prepend(x.data)  # last is the last node in the copied list
             x = x.next
         while x is not None:
-            last = c.insert(x.data, last)   # append a node with x's data to c
+            last = c.insert(x.data, last)  # append a node with x's data to c
             x = x.next
         return c
-
 
     def __str__(self):
         """Return this doubly linked list formatted as a list."""
         x = self.head
+        print('test')
+        print(type(x))
+        print(type(self))
         string = "["
         while x.next is not None:
-            string += (str(x) + ", ")
+            string += (str(x) + ",")
             x = x.next
         string += (str(x) + "]")
         return string
@@ -148,36 +150,34 @@ if __name__ == "__main__":
 
     from key_object import KeyObject
 
-    m = 10 #the size of our hashtable array
-    array = [None]*m
+    m = 10  # the size of our hashtable array
+    array = [None] * m
 
     while True:
         inp = input('Word to input in hashtable:')
         if inp == "EXIT":
             break
-        for x in inp.split(" "):
-            input_key = len(x)%m
+        for inp in inp.split(" "):
+            input_key = len(inp) % m
 
             if array[input_key] is None:
                 array.pop(input_key)
                 list_name = LinkedList()
-                list_name.prepend(x)
-                array.insert(input_key,list_name)
+                list_name.__init__()
+                list_name.prepend(("'" + inp + "'", 1))
+                array.insert(input_key, list_name)
             else:
-                if array[input_key].search(x) is not None:
-                    print(array[input_key].search(x))
+                if array[input_key].search(inp) is not None:
+                    print(array[input_key])
                 else:
-                    print("nej")
-
-            print(array)
-            print(array[input_key])
-
-
-
-
-
-
-
+                    array[input_key].prepend((inp, 1))
+                    y = array[input_key].__str__()
+                    print(y)
+                    print(type(y))
+                    print(len(y))
+                    print(y.index(inp))
+                    print(inp in y)
+                    print(y[5])
 
 """
     # Insert.
