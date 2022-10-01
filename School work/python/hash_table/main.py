@@ -148,6 +148,38 @@ if __name__ == "__main__":
 
     from key_object import KeyObject
 
+    m = 10 #the size of our hashtable array
+    array = [None]*m
+
+    while True:
+        inp = input('Word to input in hashtable:')
+        if inp == "EXIT":
+            break
+        for x in inp.split(" "):
+            input_key = len(x)%m
+
+            if array[input_key] is None:
+                array.pop(input_key)
+                list_name = LinkedList()
+                list_name.prepend(x)
+                array.insert(input_key,list_name)
+            else:
+                if array[input_key].search(x) is not None:
+                    print(array[input_key].search(x))
+                else:
+                    print("nej")
+
+            print(array)
+            print(array[input_key])
+
+
+
+
+
+
+
+
+"""
     # Insert.
     linked_list1 = LinkedList()
     for i in range(10):
@@ -185,4 +217,4 @@ if __name__ == "__main__":
     print(node5)
     linked_list3.insert(KeyObject("VT", 17), node5)  # insert VT after CO
     linked_list3.delete(node5)                       # delete CO
-    print(linked_list3)
+    print(linked_list3)"""
