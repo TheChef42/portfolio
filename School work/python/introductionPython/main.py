@@ -8,6 +8,12 @@ print(x)
 # python is s indented languade
 
 def sum(a, b):
+    """
+
+    :param a:
+    :param b:
+    :return:
+    """
     c = a + b
     return c
 

@@ -15,6 +15,6 @@ int main() {
     rest = rest % 60;
     sekunder = rest;
 
-    printf("%d sekunder svarer til: %d uge/r, %d dage, %d timer, %d minutter, %d sekunder\n",input,uger,dage,timer,minutter,sekunder);
+    printf("%d sekunder svarer til: %d uge/r, %d dag/e, %d time/r, %d minutte/r, %d sekund/er\n",input,uger,dage,timer,minutter,sekunder);
     return 0;
 }
