@@ -30,6 +30,8 @@
 #                                                                       #
 #########################################################################
 
+import re
+
 class LinkedListNode:
 
     def __init__(self, data):
@@ -158,12 +160,24 @@ if __name__ == "__main__":
 
     m = 10  # the size of our hashtable array
     array = [None] * m
-
-    while True:
-        inp = input('Word to input in hashtable:')
-        if inp == "EXIT":
-            break
+    with open("file.txt", encoding='UTF-8') as f:
+        read_list = f.readlines()
+        inp = []
+        for sub in read_list:
+            inp.append(re.sub('\n', ' ', re.sub(',', ' ', re.sub("'',", ' ', sub))))
+        print(str(inp))
+        inp = str(inp)
         for inp in inp.split(" "):
+            if inp.isspace():
+                continue
+            inp = inp.replace('"', '')
+            inp = inp.replace("'", '')
+            inp = inp.replace(".", '')
+            inp = inp.replace(",", '')
+            inp = inp.replace("?", '')
+            inp = inp.replace("”", '')
+            inp = inp.replace(":", '')
+            print(inp)
             input_key = 0
             for x in inp:
                 input_key += ord(x)
@@ -190,45 +204,10 @@ if __name__ == "__main__":
                         break
                     if counter == len(y):
                         array[input_key].prepend((inp, 1))
+    with open('result.txt', 'w') as file:
         for key in array:
-            print(key)
+            print(key, file=file)
 
 """
-    # Insert.
-    linked_list1 = LinkedList()
-    for i in range(10):
-        linked_list1.prepend(i)
-    print(linked_list1)
 
-    # Search.
-    print(linked_list1.search(5))
-
-    # Copy.
-    linked_list2 = linked_list1.copy()
-    linked_list2.prepend(99)
-    print(linked_list1)
-    print(linked_list2)
-
-    # Delete.
-    linked_list2 = LinkedList()
-    linked_list2.prepend(5)
-    linked_list2.prepend(6)
-    linked_list2.prepend(7)
-    print(linked_list2)
-    x = linked_list2.search(6)  # should be 6
-    print(x)
-    linked_list2.delete(x)
-    print(linked_list2.search(6))  # unsuccessful search
-    print(linked_list2)
-
-    # Object.
-    linked_list3 = LinkedList(KeyObject.get_key)
-    list1 = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "HI", "NH", "NY"]
-    for i in range(len(list1)):
-        linked_list3.prepend(KeyObject(list1[i], i))
-    print(linked_list3)
-    node5 = linked_list3.search(5)  # CO has key 5
-    print(node5)
-    linked_list3.insert(KeyObject("VT", 17), node5)  # insert VT after CO
-    linked_list3.delete(node5)                       # delete CO
-    print(linked_list3)"""
+"""
