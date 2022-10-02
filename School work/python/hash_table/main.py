@@ -29,8 +29,10 @@
 # SOFTWARE.                                                             #
 #                                                                       #
 #########################################################################
+from wordcloud import WordCloud, STOPWORDS
+import matplotlib.pyplot as plt
+import pandas as pd
 
-import re
 
 class LinkedListNode:
 
@@ -144,13 +146,13 @@ class LinkedList:
         return string
 
     def str(self):
-            """Return this doubly linked list formatted as a list tuple elements."""
-            x = self.head
-            array = []
-            while x is not None:
-                array.append(x.data)
-                x = x.next
-            return array
+        """Return this doubly linked list formatted as a list tuple elements."""
+        x = self.head
+        array = []
+        while x is not None:
+            array.append(x.data)
+            x = x.next
+        return array
 
 
 # Testing
@@ -160,16 +162,12 @@ if __name__ == "__main__":
 
     m = 10  # the size of our hashtable array
     array = [None] * m
+    top_10 = [("None", 0)] * 10
     with open("file.txt", encoding='UTF-8') as f:
-        read_list = f.readlines()
-        inp = []
-        for sub in read_list:
-            inp.append(re.sub('\n', ' ', re.sub(',', ' ', re.sub("'',", ' ', sub))))
-        print(str(inp))
+        inp = f.readlines()
         inp = str(inp)
+
         for inp in inp.split(" "):
-            if inp.isspace():
-                continue
             inp = inp.replace('"', '')
             inp = inp.replace("'", '')
             inp = inp.replace(".", '')
@@ -177,7 +175,9 @@ if __name__ == "__main__":
             inp = inp.replace("?", '')
             inp = inp.replace("”", '')
             inp = inp.replace(":", '')
-            print(inp)
+            inp = inp.replace("\n", '')
+            inp = inp.replace("\\n", '')
+            inp = inp.replace("’", '')
             input_key = 0
             for x in inp:
                 input_key += ord(x)
@@ -196,8 +196,17 @@ if __name__ == "__main__":
                         word_amount = item[1]
                         k = array[input_key].search((inp, word_amount))
                         array[input_key].delete(k)
-                        array[input_key].prepend((inp, word_amount+1))
+                        array[input_key].prepend((inp, word_amount + 1))
                         counter = -1
+                        sub_counter = 0
+                        for item1 in top_10:
+                            if item1[1] >= word_amount and item[0] is not inp:
+                                sub_counter += 1
+                                continue
+                            else:
+                                top_10.__delitem__(sub_counter)
+                                top_10.insert(sub_counter, (inp, word_amount))
+                                break
                         break
                     counter += 1
                     if counter == -1:
@@ -207,7 +216,19 @@ if __name__ == "__main__":
     with open('result.txt', 'w') as file:
         for key in array:
             print(key, file=file)
+    print([item[0] for item in top_10])
+    print(top_10)
 
+    # convert list to string and generate
+    unique_string = str([item[0] for item in top_10])
+    print(unique_string)
+    wordcloud = WordCloud(width=1000, height=500).generate(unique_string)
+    plt.figure(figsize=(15, 8))
+    plt.imshow(wordcloud)
+    plt.axis("off")
+    plt.savefig("wordcloud" + ".png", bbox_inches='tight')
+    plt.show()
+    plt.close()
 """
 
 """
