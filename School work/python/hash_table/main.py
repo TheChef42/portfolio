@@ -164,7 +164,10 @@ if __name__ == "__main__":
         if inp == "EXIT":
             break
         for inp in inp.split(" "):
-            input_key = len(inp) % m
+            input_key = 0
+            for x in inp:
+                input_key += ord(x)
+            input_key = input_key % m
             if array[input_key] is None:
                 array.pop(input_key)
                 list_name = LinkedList()
