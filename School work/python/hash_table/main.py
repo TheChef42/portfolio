@@ -132,7 +132,7 @@ class LinkedList:
         return c
 
     def __str__(self):
-        """Return this doubly linked list formatted as a list."""
+        """Return this doubly linked list formatted as a list of chars."""
         x = self.head
         string = "["
         while x.next is not None:
@@ -142,7 +142,7 @@ class LinkedList:
         return string
 
     def str(self):
-            """Return this doubly linked list formatted as a list."""
+            """Return this doubly linked list formatted as a list tuple elements."""
             x = self.head
             array = []
             while x is not None:
