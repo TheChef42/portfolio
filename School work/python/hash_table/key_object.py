@@ -58,3 +58,4 @@ if __name__ == '__main__':
     objb = KeyObject('b', 2)
     print(obja < objb)
     print(obja > objb)
+    print(ord('h'))

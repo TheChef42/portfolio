@@ -31,7 +31,6 @@
 #########################################################################
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
-import pandas as pd
 
 
 class LinkedListNode:
@@ -162,7 +161,7 @@ if __name__ == "__main__":
 
     m = 10  # the size of our hashtable array
     array = [None] * m
-    top_10 = [("None", 0)] * 10
+    top_10 = [("None", 0)] * 20
     with open("file.txt", encoding='UTF-8') as f:
         inp = f.readlines()
         inp = str(inp)
@@ -185,7 +184,6 @@ if __name__ == "__main__":
             if array[input_key] is None:
                 array.pop(input_key)
                 list_name = LinkedList()
-                list_name.__init__()
                 list_name.prepend((inp, 1))
                 array.insert(input_key, list_name)
             else:
@@ -221,7 +219,6 @@ if __name__ == "__main__":
 
     # convert list to string and generate
     unique_string = str([item[0] for item in top_10])
-    print(unique_string)
     wordcloud = WordCloud(width=1000, height=500).generate(unique_string)
     plt.figure(figsize=(15, 8))
     plt.imshow(wordcloud)
