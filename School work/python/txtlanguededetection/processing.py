@@ -37,6 +37,7 @@ def calculate_frequencies(text):
 
     return frequencies
 
+
 def process_book(book_path):
     """
     TODO:
