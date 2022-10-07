@@ -35,20 +35,19 @@ import matplotlib.pyplot as plt
 
 class LinkedListNode:
 
-    def __init__(self, word, value):
+    def __init__(self, data):
         """Initialize a node of a doubly linked list with the given data."""
         self.prev = None
         self.next = None
-        self.word = word
-        self.value = value
+        self.data = data
 
     def get_data(self):
         """Return data."""
-        return self.word
+        return self.data
 
     def __str__(self):
         """Return data as a string."""
-        return self.word, self.value
+        return str(self.data)
 
 
 class LinkedList:
@@ -79,9 +78,9 @@ class LinkedList:
             x = x.next
         return x
 
-    def insert(self, word, y):
+    def insert(self, data, y):
         """Insert a node with data after node y.  Return the new node."""
-        x = LinkedListNode(word)  # construct a node x
+        x = LinkedListNode(data)  # construct a node x
         x.next = y.next  # x's successor is y's successor
         x.prev = y  # x's predecessor is y
         if y.next is not None:
@@ -89,9 +88,9 @@ class LinkedList:
         y.next = x  # x is now y's successor
         return x
 
-    def prepend(self, word, value):
+    def prepend(self, data):
         """Insert a node with data as the head of a doubly linked list.  Return the new node."""
-        x = LinkedListNode(word, value)  # construct a node x
+        x = LinkedListNode(data)  # construct a node x
         x.next = self.head  # set its next to the head
         if self.head is not None:  # if a head already exists, change its prev
             self.head.prev = x
@@ -145,6 +144,15 @@ class LinkedList:
         string += (str(x) + "]")
         return string
 
+    def str(self):
+        """Return this doubly linked list formatted as a list tuple elements."""
+        x = self.head
+        array = []
+        while x is not None:
+            array.append(x.data)
+            x = x.next
+        return array
+
 
 # Testing
 if __name__ == "__main__":
@@ -153,33 +161,61 @@ if __name__ == "__main__":
 
     m = 10  # the size of our hashtable array
     array = [None] * m
-    #top_10 = [("None", 0)] * 20
+    top_10 = [("None", 0)] * 20
     with open("file.txt", encoding='UTF-8') as f:
-        inp = f.read()
+        inp = f.readlines()
+        inp = str(inp)
 
         for inp in inp.split(" "):
+            inp = inp.replace('"', '')
+            inp = inp.replace("'", '')
+            inp = inp.replace(".", '')
+            inp = inp.replace(",", '')
+            inp = inp.replace("?", '')
+            inp = inp.replace("”", '')
+            inp = inp.replace(":", '')
+            inp = inp.replace("\n", '')
+            inp = inp.replace("\\n", '')
+            inp = inp.replace("’", '')
             input_key = 0
             for x in inp:
                 input_key += ord(x)
             input_key = input_key % m
-            print(input_key)
             if array[input_key] is None:
                 array.pop(input_key)
                 list_name = LinkedList()
-                list_name.prepend(inp, 1)
+                list_name.prepend((inp, 1))
                 array.insert(input_key, list_name)
             else:
-                array[input_key].prepend(inp, 1)
-        print(array)
-        for x in array:
-            print(x)
-        with open('result.txt', 'w') as file:
-            for key in array:
-                print(key, file=file)
-
-            #print([item[0] for item in top_10])
-            #print(top_10)
-"""
+                y = array[input_key].str()
+                counter = 0
+                for item in y:
+                    if item[0] == inp:
+                        word_amount = item[1]
+                        k = array[input_key].search((inp, word_amount))
+                        array[input_key].delete(k)
+                        array[input_key].prepend((inp, word_amount + 1))
+                        counter = -1
+                        sub_counter = 0
+                        for item1 in top_10:
+                            if item1[1] >= word_amount and item[0] is not inp:
+                                sub_counter += 1
+                                continue
+                            else:
+                                top_10.__delitem__(sub_counter)
+                                top_10.insert(sub_counter, (inp, word_amount))
+                                break
+                        break
+                    counter += 1
+                    if counter == -1:
+                        break
+                    if counter == len(y):
+                        array[input_key].prepend((inp, 1))
+    with open('result.txt', 'w') as file:
+        for key in array:
+            print(key, file=file)
+    print([item[0] for item in top_10])
+    print(top_10)
 
     # convert list to string and generate
     unique_string = str([item[0] for item in top_10])
@@ -190,5 +226,6 @@ if __name__ == "__main__":
     plt.savefig("wordcloud" + ".png", bbox_inches='tight')
     plt.show()
     plt.close()
+"""
 
 """
