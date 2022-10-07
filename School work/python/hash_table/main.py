@@ -177,7 +177,7 @@ if __name__ == "__main__":
             inp = inp.replace("\n", '')
             inp = inp.replace("\\n", '')
             inp = inp.replace("’", '')
-            input_key = 0
+            input_key = 0+1
             for x in inp:
                 input_key += ord(x)
             input_key = input_key % m
