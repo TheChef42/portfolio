@@ -175,7 +175,7 @@ if __name__ == "__main__":
             print(x)
         with open('result.txt', 'w') as file:
             for key in array:
-                print(key, file=file)
+                print(key, file = file)
 
             #print([item[0] for item in top_10])
             #print(top_10)
