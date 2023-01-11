@@ -53,7 +53,7 @@ class Edge:
 
 	def get_weight(self):
 		"""Return the weight of this edge."""
-		return self.weight
+		return 1
 
 	def set_weight(self, weight):
 		"""Set the weight of this edge."""
@@ -231,7 +231,7 @@ class AdjacencyListGraph:
 		for i in range(self.card_V):
 			result += str(mapping_func(i)) + ": "
 			for edge in self.get_adj_list(i):
-				result += edge.strmap(mapping_func) + " "
+				result += chr(int(edge.strmap(mapping_func)) + 96) + " "
 			result += "\n"
 		return result
 
