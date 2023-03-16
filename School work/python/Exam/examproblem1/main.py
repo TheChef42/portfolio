@@ -70,17 +70,15 @@ if __name__ == "__main__":
         x = input()
         x = x.replace(" ", "")
         key = int(x, 2) % 8
-        print("test")
-        print(str(hashtable1.search(key, x)))
-        print(x)
         if str(hashtable1.search(key, x)) == x:
-            print("hit")
             amount_duplicated += 1
             continue
         hashtable1.insert(KeyObject(x, key))
 
     print(amount_duplicated)
-    print(hashtable1)
+    print(str(hashtable1).replace(", ", " ").replace("[", "").replace("]", "").replace("None", "").replace("  ", "", 1).replace("  ", "\n").replace(" ", "\n"))
+
+
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

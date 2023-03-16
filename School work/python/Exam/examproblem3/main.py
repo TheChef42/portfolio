@@ -8,12 +8,14 @@ import random
 
 
 N=int(input('input number of node in tangle: '))+1
-#Nodes=input('input name of node in tangle: ')
+Nodes = input('input name of node in tangle: ')
 
 Genesis = input("Input the genesis: ")
 
 # Directed.
 graph = AdjacencyListGraph(N)
+
+
 
 walkOptions = []
 tips = []
@@ -34,6 +36,7 @@ while True:
     else:
         for inputt in inputs:
             i = 0
+            z = 0
             while True:
                 if len(list(graph.get_adj_list(i))) == 0:
                     graph.insert_edge(i, ord(inputt) - 96)
@@ -55,8 +58,6 @@ while True:
                     i = int(str(random.choice(walkOptions)))-1
                     walkOptions = []
 
-print(graph)
-
 
 Tips = []
 for i in range(N-1):
@@ -70,11 +71,8 @@ shortestpath = dag_shortest_paths(graph, 0)[0]
 
 i = 0
 for b in shortestpath:
-    print(b)
     if b == float('inf'):
         shortestpath.pop(i)
     i += 1
-
-print(shortestpath)
 
 print(f"Tangle lenght: {max(shortestpath)+1}")

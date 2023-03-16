@@ -15,7 +15,6 @@ for i in range(int(numberOfDays)):
     array.append(inputtedData)
     array2.append(inputtedData[:2])
     array3.append(int(inputtedData[1]))
-    days.append(inputtedData[0])
     inputUsage.append(float(inputtedData[2]))
     inputPrice.append(int(inputtedData[1]))
 
@@ -35,13 +34,12 @@ for k in range(int(numberOfDays)):
     minHeapPrice.swap(0, minHeapPrice.get_heap_size() - 1)
     minHeapPrice.set_heap_size(minHeapPrice.get_heap_size() - 1)
     minHeapPrice.min_heapify(0)
-
-    i = 0
-    for item in array2:
-        if array3[i] == int(min):
-            array2[i] = f"{item[0]}  {item[1]}  {max}"
-        i += 1
     optimalcost += int(min) * float(max)
+
+    i = array3.index(int(min))
+    array2[i] = f"{array2[i][0]}  {array2[i][1]}  {max}"
+
+
 
 for x in array2:
     print(x)

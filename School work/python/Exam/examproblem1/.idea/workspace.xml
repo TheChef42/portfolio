@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe23fdc9-0bc1-4c4f-84b4-7099cd12af15" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../examproblem3/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examproblem3/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examproblem3/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examproblem3/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examproblem3/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_01_2023_11_02__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examproblem3/.idea/shelf/Uncommitted_changes_before_Update_at_11_01_2023_11_06__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examproblem3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/examproblem1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examproblem2/.idea/examproblem2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../examproblem2/.idea/examproblem2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examproblem2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../examproblem2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examproblem2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../examproblem2/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examproblem3/.idea/examproblem3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../examproblem3/.idea/examproblem3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examproblem3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../examproblem3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examproblem3/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../examproblem3/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,16 +33,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Github/portfolio/School work/python/Exam/examproblem2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="examproblem1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -47,6 +78,7 @@
       <updated>1673429730818</updated>
       <workItem from="1673429732162" duration="1785000" />
       <workItem from="1673431861823" duration="1404000" />
+      <workItem from="1673467222194" duration="4047000" />
     </task>
     <servers />
   </component>
@@ -65,6 +97,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/examproblem1$main.coverage" NAME="main Coverage Results" MODIFIED="1673429863115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/examproblem1$main.coverage" NAME="main Coverage Results" MODIFIED="1673469421762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
