@@ -1,9 +1,8 @@
-public class Furniture {
+
+public abstract class Furniture  {
     private double height;
     private double width;
-    public String getType(){
-        return "";
-    };
+    public abstract String getType();
 
     public double getHeight() {
         return height;
