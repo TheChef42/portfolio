@@ -1,16 +1,36 @@
-# This is a sample Python script.
+# Import socket module
+import socket
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Create a socket object
+s = socket.socket()
+
+# Define the port on which you want to connect
+port = 12344
+
+# connect to the server on local computer
+s.connect(('127.0.0.1', port))
+
+# receive data from the server and decoding to get the string.
+msg =""
+
+while(msg != "bye"):
+    while True:
+        try:
+            msg = input("Send int to test or bye to stop:")
+            if msg == "bye":
+                break
+            int(msg)
+            break
+        except:
+            print("Not valid option!")
+    s.send(msg.encode())
+    msg = s.recv(1024).decode()
+    print(msg)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+
+# close the connection
+s.close()
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
