@@ -14,22 +14,16 @@ service FrequencyCalculator {
 message TextToCount {
   string text = 1;
 }
-
-message WordOccurrence{
-  string word = 1;
-  int64 occurrence = 2;
-}
-
 // The response message containing the greetings
 message WordCount {
-  repeated WordOccurrence WordOccurrence= 1;
+  map<string,int64> WordOccurrence= 1;
 }
 
 message TextToCombine {
-  repeated WordOccurrence WordOccurrence =1;
+  map<string,int64> WordOccurrence= 1;
 }
 
 message TotalCount {
-  repeated WordOccurrence WordOccurrence= 1;
+  map<string,int64> WordOccurrence= 1;
 }
 

@@ -9,7 +9,9 @@ class FrequencyCalculatorServicer(gRPC_pb2_grpc.FrequencyCalculatorServicer):
     def Calculate(self, request, context):
         print(request.text)
         print("Calculate")
-        return "calculate"
+        dict = {{"the": 2}}
+        countone = gRPC_pb2.WordCount(dict)
+        return countone
 
     def Combine(self, request, context):
         print("Combine")
