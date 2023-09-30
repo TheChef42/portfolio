@@ -7,14 +7,28 @@ import os, glob, threading, grpc, gRPC_pb2_grpc, gRPC_pb2, logging
 class FrequencyCalculatorServicer(gRPC_pb2_grpc.FrequencyCalculatorServicer):
 
     def Calculate(self, request, context):
-        print(request.text)
-        print("Calculate")
-        dict = {{"the": 2}}
-        countone = gRPC_pb2.WordCount(dict)
-        return countone
+        counts = dict()
+        words = request.text.split()
+
+        for word in words:
+            if word in counts:
+                counts[word] += 1
+            else:
+                counts[word] = 1
+        counts = dict(sorted(counts.items(), key=lambda x: x[1], reverse=True))
+        count = gRPC_pb2.WordCount(WordOccurrence=counts)
+        return count
 
     def Combine(self, request, context):
-        print("Combine")
+        totalcount = {}
+        print(request.WordOccurrence)
+        for key, value in request.WordOccurrence:
+            if key in totalcount:
+                totalcount[key] += value
+            else:
+                totalcount[key] = value
+        print(totalcount)
+        return gRPC_pb2.TotalCount(WordOccurrence=totalcount)
 
 
 
