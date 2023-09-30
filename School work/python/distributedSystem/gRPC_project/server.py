@@ -1,5 +1,5 @@
 from concurrent import futures
-import os, glob, threading, grpc, gRPC_pb2_grpc, gRPC_pb2, logging
+import grpc, gRPC_pb2_grpc, gRPC_pb2, logging
 
 # Press the green button in the gutter to run the script.
 
@@ -21,13 +21,13 @@ class FrequencyCalculatorServicer(gRPC_pb2_grpc.FrequencyCalculatorServicer):
 
     def Combine(self, request, context):
         totalcount = {}
-        print(request.WordOccurrence)
-        for key, value in request.WordOccurrence:
+        for tuple_item in request.allwords:
+            key = tuple_item.key
+            value = tuple_item.value
             if key in totalcount:
                 totalcount[key] += value
             else:
                 totalcount[key] = value
-        print(totalcount)
         return gRPC_pb2.TotalCount(WordOccurrence=totalcount)
 
 
