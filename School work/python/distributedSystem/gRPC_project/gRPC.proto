@@ -1,20 +1,18 @@
 syntax = "proto3";
 
-
-// The greeter service definition.
+//defines the FrequencyCalculator service and define the two functions
 service FrequencyCalculator {
-  // Sends a greeting
+
   rpc Calculate (TextToCount) returns (WordCount) {}
 
   rpc Combine (TextToCombine) returns (TotalCount) {}
-
 }
-
-// The request message containing the users name.
+//defines what the structure of the messages should be
 message TextToCount {
   string text = 1;
 }
-// The response message containing the greetings
+
+//using the map structure, so that it resembles a dictionary structure
 message WordCount {
   map<string,int64> WordOccurrence= 1;
 }
@@ -24,6 +22,7 @@ message tuples {
   int64 value = 2;
 }
 
+//the repeated field, creates a list of the message tuples
 message TextToCombine {
   repeated tuples allwords = 1;
 }
@@ -31,4 +30,3 @@ message TextToCombine {
 message TotalCount {
   map<string,int64> WordOccurrence= 1;
 }
-
