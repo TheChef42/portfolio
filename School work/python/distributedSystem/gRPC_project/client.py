@@ -20,8 +20,7 @@ def Combine(stub, allwords):  # a gRPC function that calls the combine function 
 def worker(threadname, filenames, results, stub, lock):  # a worker function that defines what each thread should do
     thread_results = []
 
-    for filename in filenames:  # filenames is a list, so the loop extracts the filename
-        thread_results = Calculate(stub, filename) + thread_results  # call the calculate function
+    thread_results = Calculate(stub, filenames) + thread_results  # call the calculate function
 
     with lock:  # preventing race conditions when modifying the result list
         results.extend(list(thread_results))
@@ -37,7 +36,7 @@ def run():
 
         # creating a thread for each file
         for i in range(n):
-            thread = threading.Thread(name=str(i), target=worker, args=(i, filenames[i::n], allwords, stub, lock))
+            thread = threading.Thread(name=str(i), target=worker, args=(i, filenames[i], allwords, stub, lock))
             threads.append(thread)
 
         # running all the threads

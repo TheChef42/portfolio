@@ -2,7 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe23fdc9-0bc1-4c4f-84b4-7099cd12af15" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/firstLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/firstLecture/.idea/firstLecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/firstLecture/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/firstLecture/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/firstLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/firstLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/firstLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/lecture3/.idea/lecture3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secondLecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secondLecture/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secondLecture/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secondLecture/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secondLecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secondLecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secondLecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secoundlecture/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secoundlecture/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secoundlecture/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secoundlecture/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secoundlecture/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secoundlecture/.idea/secoundlecture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secoundlecture/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secoundlecture/client1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secoundlecture/client2_template.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../distributedSystem/secoundlecture/server1_template.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +40,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2KAuVK8IgnBbQPyaNCfyNEoUcHV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -24,8 +53,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Github/portfolio/School work/python/distributedSystem/gRPC_project",
     "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)"
+    "node.js.selected.package.eslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
@@ -69,6 +101,7 @@
       <workItem from="1673431861823" duration="1404000" />
       <workItem from="1673467222194" duration="4047000" />
       <workItem from="1694071461295" duration="84000" />
+      <workItem from="1696406598439" duration="54000" />
     </task>
     <servers />
   </component>
