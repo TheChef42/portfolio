@@ -10,7 +10,7 @@ class FrequencyCalculatorServicer(gRPC_pb2_grpc.FrequencyCalculatorServicer):
         words = request.text.split()  # splits the recived text into words in a list
 
         for word in words:  # looks at each word and sees if it is in the dictionary counts, if yes adds one to the value
-            word = ''.join(letter for letter in word if letter.isalnum())  # sanitizing each word and removing symbols
+            word = ''.join(letter for letter in word if letter.isalnum()).lower()  # sanitizing each word and removing symbols
             if word in counts:
                 counts[word] += 1
             else:
